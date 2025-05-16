@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Nunito', sans-serif;
+    }
+
+    body {
+        height: 100vh;
+        display: flex;
+        background-color: #f8f9fa;
+    }
+
+    .container {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .img-container {
+        width: 50%;
+        height: 100%;
+        position: relative;
+    }
+
+    .img {
+        background-image: url("https://img.freepik.com/free-photo/top-view-beauty-cosmetics_23-2148598555.jpg?uid=R200321991&ga=GA1.1.1240664599.1747310117&semt=ais_hybrid&w=740");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 100%;
+        width: 100%;
+        position: relative;
+    }
+
+    .content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 2rem;
+        color: white;
+        font-size: 4rem;
+        text-align: center;
+    }
+
+    .content h1 {
+        font-size: 4rem;
+        margin-bottom: 1.1rem;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    }
+
+    .content p {
+        font-size: 2.5rem;
+        max-width: 1000px;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        text-align: center;
+    }
+
+    .form-container {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem;
+    }
+
+    .form {
+        width: 100%;
+        max-width: 450px;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 2.5rem;
+        background-color: white;
+        border-radius: 12px;
+        box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.1);
+
+    }
+
+    .form-header {
+        text-align: center;
+        margin-bottom: 1.1rem;
+    }
+
+    .form-header h2 {
+        color: #333;
+        font-size: 1.8rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .form-header p {
+        color: #777;
+        font-size: 0.9rem;
+    }
+
+    .form-label {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .form-label input {
+        padding: 0.75rem 1rem;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        font-size: 1rem;
+        transition: border-color 0.3s;
+    }
+
+    .form-label input:focus {
+        border-color: #6a5acd;
+        outline: none;
+        box-shadow: 0 0 0 2px rgba(106, 90, 205, 0.2);
+    }
+
+    .form-label input::placeholder {
+        color: #aaa;
+    }
+
+    .submit-btn {
+        background-color: #6a5acd;
+        color: white;
+        border: none;
+        padding: 0.9rem;
+        font-size: 1rem;
+        font-weight: 600;
+        transition: background-color 0.3s
+    }
+
+    .submit-btn:hover {
+        background-color: #5949b9;
+    }
+
+
+    .form-footer {
+        text-align: center;
+        margin-top: 1rem;
+        font-size: 0.85rem;
+        color: #777;
+    }
+
+    .form-footer a {
+        color: #6a5acd;
+        text-decoration: none;
+        font-weight: 500;
+    }
+
+    .remember-forgot {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.85rem;
+        margin-top: 0.5rem;
+    }
+
+    .remember {
+        display: flex;
+        align-self: center;
+        gap: 0.5rem;
+    }
+
+    .remember input[type="checkbox"] {
+        width: 16px;
+        height: 16px;
+        accent-color: #6a5acd;
+    }
+
+    @media (max-width: 768px) {
+        .container {
+            flex-direction: column;
+        }
+
+        .img-container {
+            width: 100%;
+            height: 35%;
+        }
+
+        .form-container {
+            width: 100%;
+            height: 65%;
+            padding: 1.5rem;
+        }
+
+        .form {
+            padding: 1.5rem;
+        }
+
+        .overlay h1 {
+            font-size: 2rem;
+        }
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="img-container">
+            <div class="img"></div>
+            <div class="content">
+                <h1>Welcome Back</h1>
+                <p>Login to access your beauty essentials,exclusive offers,and track your orders.</p>
+            </div>
+
+        </div>
+        <div class="form-container" id="login-form">
+            <form action="" class="form">
+                <div class="form-header">
+                    <h2>Sign In</h2>
+                    <p>Please enter your credentials to login</p>
+
+                </div>
+                <div class="form-label">
+                    <label for="name">User Name</label>
+                    <input type="text" name="name" id="name" placeholder="Enter Your Email">
+                </div>
+                <div class="form-label">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" placeholder="Enter Your Password">
+                </div>
+                <div class="remember-forgot">
+                    <div class="remember">
+                        <input type="checkbox" id="remember" name="remember">
+                        <label for="remember">Remember me</label>
+                    </div>
+                    <a href="#" class="forgot">Forgot Password?</a>
+                </div>
+
+                <button type="submit" class="submit-btn">Sign In</button>
+                <div class="form-footer">
+                    Don't have an Account? <a href="register.html">Sign In</a>
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+</body>
+<script>
+    document.getElementById("login-form").addEventListener("submit", async (e) => {
+        e.preventDefault()
+        const form = e.target
+        const data = {
+            username: form.name.value,
+            password: form.password.value,
+        }
+        console.log(data);
+
+        try {
+            const res = await fetch("https://cosmetics-backend-pz3r.onrender.com/auth/token", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded",
+                },
+                body: new URLSearchParams({
+                    username: data.username,
+                    password: data.password
+                }),
+            })
+
+            const result = await res.json()
+            console.log(result)
+            if (res.ok) {
+                alert("Login Successfully")
+
+                localStorage.setItem("token", result.access_token)
+                try {
+                    const userResponse = await fetch("https://cosmetics-backend-pz3r.onrender.com/user/me", {
+                        method: "GET",
+                        headers: {
+                            'Authorization': `Bearer ${localStorage.getItem('token')}`,
+                            'Content-Type': 'application/json'
+                        }
+
+                    })
+                   
+                    if (userResponse.ok) {
+                        const userResult = await userResponse.json()
+                        console.log("user details",userResult)
+                        localStorage.setItem("username", userResult.username)
+                        localStorage.setItem("userid", userResult.userid)
+
+                        alert("Login Suucessfully! Welcome," + userResult.username)
+                        window.location.href = "/"
+                    }else{
+                        const errorData = await userResponse.json()
+                        console.error("Error fetching data :",errorData)
+                        alert("Login successfully,bu couldn't fetch user detail.Please try again")
+                    }
+
+                } catch (userError) {
+                     console.error("Error fetching user details:", userError);
+                    alert("Login successful, but failed to get user information.");
+                    window.location.href = "/";
+
+                }
+
+                
+            } else {
+                alert(result.message || "Login Failed")
+            }
+        } catch (error) {
+            console.log(error)
+            alert("something went wrong.Please try again later")
+        }
+
+
+    })
+</script>
+
+</html>
