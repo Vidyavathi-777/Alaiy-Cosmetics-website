@@ -175,7 +175,7 @@ body {
 }
 
 .banner-img {
-    background-image: url("https://img.freepik.com/free-photo/skin-care-banner-concept-with-makeup_23-2149449141.jpg?uid=R200321991&ga=GA1.1.1240664599.1747310117&semt=ais_hybrid&w=740");
+    background-image: url("images/freepik__retouch__92564.png");
     background-size: cover;
     background-position: center;
     height: 85vh;
@@ -881,14 +881,22 @@ button[type="submit"]:hover {
         align-items: center;
         gap: 10px;
     }
-
-    .search-cart input {
-        width: 120px;
+    .account{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        
+        
     }
-
+    .search-cart input {
+        width: 350px;
+        text-align: center;
+     
+    }
+/* 
     .search-cart input:focus {
         width: 160px;
-    }
+    } */
 
     .banner-img {
         height: 50vh;
