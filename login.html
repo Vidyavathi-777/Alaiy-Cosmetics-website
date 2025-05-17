@@ -353,7 +353,7 @@
         console.log(data);
 
         try {
-            const res = await fetch("https://cosmetics-backend-pz3r.onrender.com/auth/token", {
+            const res = await fetch("https://cosmetics-backend-pz3r.onrender.com/auth/loginn", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/x-www-form-urlencoded",
@@ -371,7 +371,7 @@
 
                 localStorage.setItem("token", result.access_token)
                 try {
-                    const userResponse = await fetch("https://cosmetics-backend-pz3r.onrender.com/user/me", {
+                    const userResponse = await fetch("https://cosmetics-backend-pz3r.onrender.com/user/verifyToken", {
                         method: "GET",
                         headers: {
                             'Authorization': `Bearer ${localStorage.getItem('token')}`,
