@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+    --primary-color: #c06c50;
+    --secondary-color: #f5e1da;
+    --accent-color: #e4806f;
+    --dark-text: #524641;
+    --light-text: #928984;
+    --bg-color: #fff8f5;
+    --white: #ffffff;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+
+}
+
+    .product-container{
+        
+        max-width: 1200px;
+        margin: 30px 0;
+        display: flex;
+        /* flex-direction: row; */
+        flex-wrap: wrap;
+        padding-top: 4rem; 
+    }
+    .product-image{
+        flex: 1;
+        padding: 20px;
+        background-color: #ffffff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-width: 300px;
+        padding-top: 10em;
+    }
+
+    .product-image img{
+        padding-top: 6rem;
+        max-width: 100%;
+        max-height: 1000px;
+        object-fit: contain;
+    }
+
+    .product-details{
+        flex: 1;
+        padding: 20px;
+        min-width: 300px;
+        gap: 30px;
+    }
+
+    .product-title{
+        font-size: 28px;
+        margin-bottom: 10px;
+        font-weight: 500;
+    }
+
+    .rating{
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .stars{
+        color: #ffc107;
+        margin-right: 10px;
+    }
+
+    .price{
+        font-size: 24px;
+        color: #e4806f;
+        margin-bottom: 20px;
+        font-weight: bold;
+    }
+
+    .info-item{
+        display: flex;
+        margin-bottom: 10px;
+    }
+    .info-label{
+        width: 150px;
+        color: #524641;
+    }
+
+    .quantity-selector{
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .quantity-btn{
+        width: 40px;
+        height: 40px;
+        background-color: #f8e8cd;
+        border: none;
+        font-size: 16px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    .quantity-input{
+        width: 60px;
+        height: 40px;
+        border: 1px solid #524641;
+        text-align: center;
+        font-size: 16px;
+        margin: 0 5px;
+    }
+
+    .actions-buttons{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+
+    .add-to-cart{
+        background-color: #928984;
+        color: white;
+        border: none;
+        padding: 12px 30px;
+        font-size: 16px;
+        border-radius: 30px;
+        display: flex;
+        align-items: center;
+        margin-top: 20px;
+        margin-left: 15px;
+        display: inline-block;
+        padding-top: 16px;
+    }
+
+    .add-to-cart i{
+        margin-right: 5px;
+    }
+     .wishlist-btn {
+      width: 40px;
+      height: 40px;
+      border: 1px solid var(--border-color);
+      background-color: white;
+      /* display: flex;
+      justify-content: center;
+      align-items: center; */
+      cursor: pointer;
+      border-radius: 50%;
+    }
+    
+    .wishlist-btn i {
+      color: #777;
+    }
+     .information {
+      margin-top: 20px;
+      border-top: 1px solid #eee;
+      padding-top: 20px;
+    }
+
+    .information h3 {
+      font-size: 1.2rem;
+      font-weight: 400;
+      margin-bottom: var(--spacing-md);
+      letter-spacing: 1px;
+    }
+
+    .information p {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: var(--light-text);
+    }
+
+    @media (max-width:768px) {
+        .product-container{
+            padding-top: 0;
+            flex-direction: column;
+        }
+        .product-image{
+            padding-top: 0;
+
+        }
+        .product-image img{
+            padding-top: 0;
+        }
+        
+    }
+
+
+
+
+    </style>
+</head>
+<body>
+     <nav class="navbar">
+    <div class="logo">
+      <img src="images/download (10).png" alt="Rewa beauty store">
+
+    </div>
+    <div class="hamburger" id="hamburger">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+        class="size-6" width="30px">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+      </svg>
+
+    </div>
+    <div class="nav-list">
+
+
+      <ul>
+        <li>HOME</li>
+        <li>CATEGORIES</li>
+        <li>PRODUCTS</li>
+        <li>BRANDS</li>
+        <li>ABOUT US</li>
+      </ul>
+      <div class="mobile-menu-btn" id="mobile-menu-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+          class="size-6" width="30px">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </svg>
+
+      </div>
+
+    </div>
+    <div class="search-cart">
+
+      <input type="text" name="search" id="search" placeholder="search">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+        class="size-6" width="20px">
+        <path stroke-linecap="round" stroke-linejoin="round"
+          d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+      </svg>
+
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+        class="size-6" width="20px">
+        <path stroke-linecap="round" stroke-linejoin="round"
+          d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
+      </svg>
+
+
+
+
+    </div>
+  </nav>
+
+  <main class="product-container">
+    <div class="product-image">
+        <img src="https://eliah-next.vercel.app/images/product/2.png" alt="">
+
+    </div>
+    <div class="product-details">
+        <h1 class="product-title">Velevet Melon High Intensity</h1>
+        <div class="rating">
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+
+        </div>
+        <div class="price">Rs.5000</div>
+        <div class="product-info">
+            <div class="info-item">
+            <div class="info-label">Brand :</div>
+            <div>Lakme</div>
+            </div>
+             <div class="info-item">
+            <div class="info-label">Availability :</div>
+            <div class="isStock">In Stock</div>
+            </div>
+
+        </div>
+        <div class="quantity-selector">
+            <button class="quantity-btn minus">-</button>
+            <input type="text" class="quantity-input" value="1">
+            <button class="quantity-btn plus">+</button>
+
+        </div>
+        <div class="action-buttons">
+        <button class="add-to-cart">
+          <i class="fas fa-shopping-cart"></i>
+          ADD TO CART
+        </button>
+        <button class="wishlist-btn">
+          <i class="far fa-heart"></i>
+        </button>
+      </div>
+      <div class="information">
+        <div class="information-header">
+            <h3>Description</h3>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa consequatur sed ex. Necessitatibus perspiciatis error voluptates sit accusantium tempore, eveniet fuga vel qui, odio, aliquam molestiae iusto nobis ullam facilis?</p>
+
+        </div>
+        <div class="information-header">
+            <h3>Return Policy</h3>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa consequatur sed ex. Necessitatibus perspiciatis error voluptates sit accusantium tempore, eveniet fuga vel qui, odio, aliquam molestiae iusto nobis ullam facilis?</p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="links">
+      <h3>USEFUL LINKS</h3>
+      <a href="">PRIVACY POLICY</a>
+      <a href="">CATEGORIES</a>
+      <a href="">BRANDS</a>
+      <a href="">GALLERY</a>
+
+    </div>
+    <div class="home">
+      <a href="">HOME</a>
+      <a href="">PRODUCTS</a>
+      <a href="">ABOUT US</a>
+      <a href="">VIDEOS</a>
+
+    </div>
+    <div class="footer-contact">
+      <h3>CONTACT</h3>
+      <p>Palm Court Bldg Goregaon Sports Complex,Malad West,Mumbai,MH-400064</p>
+      <p>+91-8888888888</p>
+      <p>rewabeautystoresuppot@rewa.com</p>
+
+    </div>
+    <div class="connect">
+      <div class="social-icons" style="font-size: 20px;">
+        <i class="fa-brands fa-facebook-f"></i>
+        <i class="fa-brands fa-linkedin-in"></i>
+        <i class="fa-brands fa-instagram"></i>
+
+      </div>
+
+
+    </div>
+
+  </footer>
+</body>
+<script>
+    document.addEventListener("DOMContentLoaded",function(){
+        const urlParams = new URLSearchParams(window.location.search)
+        const productId = urlParams.get('id')
+
+        const productImage = document.querySelector('.product-image img')
+        const productTitle = document.querySelector('.product-title')
+        const productPrice = document.querySelector('.price')
+        const brand = document.querySelector('.brand')
+        const availability = document.querySelector('.isStock')
+        const description = document.querySelector('.description p')
+        const addToCartButton = document.querySelector('.add-to-cart')
+
+        async function fetchProduct(id) {
+            try{
+                const res = await fetch(`https://cosmetics-backend-pz3r.onrender.com/products/getProducts/${id}`)
+
+                if(!res.ok){
+                    throw new Error(`API error : ${res.status}`)
+                }
+
+                const product = await res.json()
+                updateProductUI(product)
+                
+            }catch(error){
+                console.log('Error in fetching product data:',error)
+
+            }
+            
+        }
+
+        
+
+        function updateProductUI(product){
+            if(!product || !product.name){
+                console.log("Product not found")
+            }
+
+            document.title = `${product.product_name} | Rewa`
+            productTitle.textContent = product.product_name
+            productPrice.textContent = `${product.price}`
+            productImage.src = product.image[0]
+            productImage.alt = product.product_name
+            description.textContent = product.description
+
+            const quantityText = document.querySelector('.quantity-selector input')
+            const decreasebtn = document.querySelector('.quantity-selector minus')
+            const increasebtn = document.querySelector('.quantity-selector plus')
+
+            let quantity = 1
+            decreasebtn.addEventListener('click',function(){
+                if (quantity > 1){
+                    quantity--
+                    quantityText.textContent = quantity
+                }
+            })
+            increasebtn.addEventListener("click",function(){
+                quantity++
+                quantityText.textContent = quantity
+            })
+            addToCartButton.addEventListener("click",function(){
+                alert("product added to cart")
+            })
+            
+        }
+        fetchProduct(productId)
+    })
+</script>
+</html>
