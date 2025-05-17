@@ -175,7 +175,7 @@ body {
 }
 
 .banner-img {
-    background-image: url("/images/freepik__retouch__92564.png");
+    background-image: url("images/freepik__retouch__92564.png");
     background-size: cover;
     background-position: center;
     height: 85vh;

@@ -1,148 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="style.css">
-    <style>
-        :root {
-    --primary-color: #c06c50;
-    --secondary-color: #f5e1da;
-    --accent-color: #e4806f;
-    --dark-text: #524641;
-    --light-text: #928984;
-    --bg-color: #fff8f5;
-    --white: #ffffff;
-    --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    --transition: all 0.3s ease;
+  <link rel="stylesheet" href="style.css">
+  <style>
+    :root {
+      --primary-color: #c06c50;
+      --secondary-color: #f5e1da;
+      --accent-color: #e4806f;
+      --dark-text: #524641;
+      --light-text: #928984;
+      --bg-color: #fff8f5;
+      --white: #ffffff;
+      --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      --transition: all 0.3s ease;
 
-}
-
-    .product-container{
-        
-        max-width: 1200px;
-        margin: 30px 0;
-        display: flex;
-        /* flex-direction: row; */
-        flex-wrap: wrap;
-        padding-top: 4rem; 
-    }
-    .product-image{
-        flex: 1;
-        padding: 20px;
-        background-color: #ffffff;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-width: 300px;
-        padding-top: 10em;
     }
 
-    .product-image img{
-        padding-top: 6rem;
-        max-width: 100%;
-        max-height: 1000px;
-        object-fit: contain;
+    .product-container {
+
+      max-width: 1200px;
+      margin: 30px 0;
+      display: flex;
+      /* flex-direction: row; */
+      flex-wrap: wrap;
+      padding-top: 4rem;
     }
 
-    .product-details{
-        flex: 1;
-        padding: 20px;
-        min-width: 300px;
-        gap: 30px;
+    .product-image {
+      flex: 1;
+      padding: 20px;
+      background-color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-width: 300px;
+      padding-top: 10em;
     }
 
-    .product-title{
-        font-size: 28px;
-        margin-bottom: 10px;
-        font-weight: 500;
+    .product-image img {
+      padding-top: 6rem;
+      max-width: 100%;
+      max-height: 1000px;
+      object-fit: contain;
     }
 
-    .rating{
-        display: flex;
-        align-items: center;
-        margin-bottom: 20px;
+    .product-details {
+      flex: 1;
+      padding: 20px;
+      min-width: 300px;
+      gap: 30px;
     }
 
-    .stars{
-        color: #ffc107;
-        margin-right: 10px;
+    .product-title {
+      font-size: 28px;
+      margin-bottom: 10px;
+      font-weight: 500;
     }
 
-    .price{
-        font-size: 24px;
-        color: #e4806f;
-        margin-bottom: 20px;
-        font-weight: bold;
+    .rating {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
     }
 
-    .info-item{
-        display: flex;
-        margin-bottom: 10px;
-    }
-    .info-label{
-        width: 150px;
-        color: #524641;
+    .stars {
+      color: #ffc107;
+      margin-right: 10px;
     }
 
-    .quantity-selector{
-        display: flex;
-        align-items: center;
-        gap: 20px;
+    .price {
+      font-size: 24px;
+      color: #e4806f;
+      margin-bottom: 20px;
+      font-weight: bold;
     }
 
-    .quantity-btn{
-        width: 40px;
-        height: 40px;
-        background-color: #f8e8cd;
-        border: none;
-        font-size: 16px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    .info-item {
+      display: flex;
+      margin-bottom: 10px;
+    }
+
+    .info-label {
+      width: 150px;
+      color: #524641;
+    }
+
+    .quantity-selector {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .quantity-btn {
+      width: 40px;
+      height: 40px;
+      background-color: #f8e8cd;
+      border: none;
+      font-size: 16px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
 
-    .quantity-input{
-        width: 60px;
-        height: 40px;
-        border: 1px solid #524641;
-        text-align: center;
-        font-size: 16px;
-        margin: 0 5px;
+    .quantity-input {
+      width: 60px;
+      height: 40px;
+      border: 1px solid #524641;
+      text-align: center;
+      font-size: 16px;
+      margin: 0 5px;
     }
 
-    .actions-buttons{
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 30px;
+    .actions-buttons {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 30px;
     }
 
-    .add-to-cart{
-        background-color: #928984;
-        color: white;
-        border: none;
-        padding: 12px 30px;
-        font-size: 16px;
-        border-radius: 30px;
-        display: flex;
-        align-items: center;
-        margin-top: 20px;
-        margin-left: 15px;
-        display: inline-block;
-        padding-top: 16px;
+    .add-to-cart {
+      background-color: #928984;
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      font-size: 16px;
+      border-radius: 30px;
+      display: flex;
+      align-items: center;
+      margin-top: 20px;
+      margin-left: 15px;
+      display: inline-block;
+      padding-top: 16px;
     }
 
-    .add-to-cart i{
-        margin-right: 5px;
+    .add-to-cart i {
+      margin-right: 5px;
     }
-     .wishlist-btn {
+
+    .wishlist-btn {
       width: 40px;
       height: 40px;
       border: 1px solid var(--border-color);
@@ -153,11 +157,12 @@
       cursor: pointer;
       border-radius: 50%;
     }
-    
+
     .wishlist-btn i {
       color: #777;
     }
-     .information {
+
+    .information {
       margin-top: 20px;
       border-top: 1px solid #eee;
       padding-top: 20px;
@@ -175,29 +180,45 @@
       line-height: 1.8;
       color: var(--light-text);
     }
-
-    @media (max-width:768px) {
-        .product-container{
-            padding-top: 0;
-            flex-direction: column;
-        }
-        .product-image{
-            padding-top: 0;
-
-        }
-        .product-image img{
-            padding-top: 0;
-        }
-        
+    .product-image {
+    height: 600px;
+    width: 500px;
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    margin: 0 auto;
+    padding: 0 20px 30px;
+    overflow-y: hidden;
     }
 
+      .product-image .img {
+        flex-shrink: 0;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 100%;
+        margin: 10px;
+    }
+/* 
+    .product-image {
+        height: 600px;
+    } */
 
 
 
-    </style>
+    /* @media (max-width:1024px) {
+      .product-container {
+        padding-top: 10rem;
+        flex-direction: column;
+      }
+
+    } */
+  </style>
 </head>
+
 <body>
-     <nav class="navbar">
+  <nav class="navbar">
     <div class="logo">
       <img src="images/download (10).png" alt="Rewa beauty store">
 
@@ -251,40 +272,45 @@
 
   <main class="product-container">
     <div class="product-image">
-        <img src="https://eliah-next.vercel.app/images/product/2.png" alt="">
+      <div class="img"></div>
+      <!-- style="background-image: url(https://eliah-next.vercel.app/images/product/2.png);" -->
+      
+      <!-- <img src="https://eliah-next.vercel.app/images/product/2.png" alt="" > -->
+      <!-- <img src="https://eliah-next.vercel.app/images/product/2.png" alt=""> -->
+      <!-- <img src="https://eliah-next.vercel.app/images/product/2.png" alt=""> -->
 
     </div>
     <div class="product-details">
-        <h1 class="product-title">Velevet Melon High Intensity</h1>
-        <div class="rating">
-            <div class="stars">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-            </div>
-
+      <h1 class="product-title">Velevet Melon High Intensity</h1>
+      <div class="rating">
+        <div class="stars">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
         </div>
-        <div class="price">Rs.5000</div>
-        <div class="product-info">
-            <div class="info-item">
-            <div class="info-label">Brand :</div>
-            <div>Lakme</div>
-            </div>
-             <div class="info-item">
-            <div class="info-label">Availability :</div>
-            <div class="isStock">In Stock</div>
-            </div>
 
+      </div>
+      <div class="price">Rs.5000</div>
+      <div class="product-info">
+        <div class="info-item">
+          <div class="info-label">Brand :</div>
+          <div class="brand">Lakme</div>
         </div>
-        <div class="quantity-selector">
-            <button class="quantity-btn minus">-</button>
-            <input type="text" class="quantity-input" value="1">
-            <button class="quantity-btn plus">+</button>
+        <div class="info-item">
+          <div class="info-label">Availability :</div>
+          <div class="isStock">In Stock</div>
+        </div>
 
-        </div>
-        <div class="action-buttons">
+      </div>
+      <div class="quantity-selector">
+        <button class="quantity-btn minus">-</button>
+        <input type="text" class="quantity-input" value="1">
+        <button class="quantity-btn plus">+</button>
+
+      </div>
+      <div class="action-buttons">
         <button class="add-to-cart">
           <i class="fas fa-shopping-cart"></i>
           ADD TO CART
@@ -294,14 +320,18 @@
         </button>
       </div>
       <div class="information">
-        <div class="information-header">
-            <h3>Description</h3>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa consequatur sed ex. Necessitatibus perspiciatis error voluptates sit accusantium tempore, eveniet fuga vel qui, odio, aliquam molestiae iusto nobis ullam facilis?</p>
+        <div class="information-header description">
+          <h3>Description</h3>
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa consequatur sed ex. Necessitatibus
+            perspiciatis error voluptates sit accusantium tempore, eveniet fuga vel qui, odio, aliquam molestiae iusto
+            nobis ullam facilis?</p>
 
         </div>
         <div class="information-header">
-            <h3>Return Policy</h3>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa consequatur sed ex. Necessitatibus perspiciatis error voluptates sit accusantium tempore, eveniet fuga vel qui, odio, aliquam molestiae iusto nobis ullam facilis?</p>
+          <h3>Return Policy</h3>
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa consequatur sed ex. Necessitatibus
+            perspiciatis error voluptates sit accusantium tempore, eveniet fuga vel qui, odio, aliquam molestiae iusto
+            nobis ullam facilis?</p>
 
         </div>
 
@@ -348,71 +378,87 @@
   </footer>
 </body>
 <script>
-    document.addEventListener("DOMContentLoaded",function(){
-        const urlParams = new URLSearchParams(window.location.search)
-        const productId = urlParams.get('id')
+  document.addEventListener("DOMContentLoaded", function () {
+    const urlParams = new URLSearchParams(window.location.search)
+    const productId = urlParams.get('id')
 
-        const productImage = document.querySelector('.product-image img')
-        const productTitle = document.querySelector('.product-title')
-        const productPrice = document.querySelector('.price')
-        const brand = document.querySelector('.brand')
-        const availability = document.querySelector('.isStock')
-        const description = document.querySelector('.description p')
-        const addToCartButton = document.querySelector('.add-to-cart')
+    // const productImage = document.querySelector('.product-image ')
+    const productTitle = document.querySelector('.product-title')
+    const productPrice = document.querySelector('.price')
+    const brand = document.querySelector('.info-item .brand')
+    const availability = document.querySelector('.isStock')
+    const description = document.querySelector('.description p')
+    const addToCartButton = document.querySelector('.add-to-cart')
 
-        async function fetchProduct(id) {
-            try{
-                const res = await fetch(`https://cosmetics-backend-pz3r.onrender.com/products/getProducts/${id}`)
+    async function fetchProduct(id) {
+      try {
+        const res = await fetch(`https://cosmetics-backend-pz3r.onrender.com/products/getProducts/${id}`)
 
-                if(!res.ok){
-                    throw new Error(`API error : ${res.status}`)
-                }
-
-                const product = await res.json()
-                updateProductUI(product)
-                
-            }catch(error){
-                console.log('Error in fetching product data:',error)
-
-            }
-            
+        if (!res.ok) {
+          throw new Error(`API error : ${res.status}`)
         }
 
+        const product = await res.json()
+        console.log(product)
+        updateProductUI(product)
+
+      } catch (error) {
+        console.log('Error in fetching product data:', error)
+
+      }
+
+    }
+
+
+
+    function updateProductUI(product) {
+      if(!product || !product.product_name){
+          console.log("Product not found")
+      }
+
+      document.title = `${product.product_name} | Rewa`
+      productTitle.textContent = product.product_name
+      productPrice.textContent = `Rs. ${product.price}`
+      // productImage.src = product.image[0]
+      // productImage.alt = product.product_name
+      description.textContent = product.description
+      brand.textContent = product.brand
+
+      productImageContainer = document.querySelector(".product-image")
+
+      
+
+      if (product.image.length > 0) {
+        product.image.forEach(image => {
+          productImageContainer.innerHTML+=`
+          <div class="img" style="background-image: url(${image});"></div>`
+        })
         
+      }
 
-        function updateProductUI(product){
-            if(!product || !product.name){
-                console.log("Product not found")
-            }
 
-            document.title = `${product.product_name} | Rewa`
-            productTitle.textContent = product.product_name
-            productPrice.textContent = `${product.price}`
-            productImage.src = product.image[0]
-            productImage.alt = product.product_name
-            description.textContent = product.description
+      const quantityText = document.querySelector('.quantity-selector input')
+      const decreasebtn = document.querySelector('.quantity-selector .minus')
+      const increasebtn = document.querySelector('.quantity-selector .plus')
 
-            const quantityText = document.querySelector('.quantity-selector input')
-            const decreasebtn = document.querySelector('.quantity-selector minus')
-            const increasebtn = document.querySelector('.quantity-selector plus')
-
-            let quantity = 1
-            decreasebtn.addEventListener('click',function(){
-                if (quantity > 1){
-                    quantity--
-                    quantityText.textContent = quantity
-                }
-            })
-            increasebtn.addEventListener("click",function(){
-                quantity++
-                quantityText.textContent = quantity
-            })
-            addToCartButton.addEventListener("click",function(){
-                alert("product added to cart")
-            })
-            
+      let quantity = 1
+      decreasebtn.addEventListener('click', function () {
+        if (quantity > 1) {
+          quantity--
+          quantityText.value = quantity
         }
-        fetchProduct(productId)
-    })
+      })
+      increasebtn.addEventListener("click", function () {
+        quantity++
+        quantityText.value = quantity
+      })
+      addToCartButton.addEventListener("click", function () {
+        alert("product added to cart")
+      })
+
+    }
+    fetchProduct(productId)
+  })
 </script>
+
 </html>
