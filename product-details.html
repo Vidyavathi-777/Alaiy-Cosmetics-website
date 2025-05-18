@@ -454,8 +454,31 @@
         quantity++
         quantityText.value = quantity
       })
-      addToCartButton.addEventListener("click", function () {
-        alert("product added to cart")
+      addToCartButton.addEventListener("click", async()=> {
+        console.log("added to cart")
+        try{
+          const cartdata ={
+            product_id : product.product_id,
+            quantity : quantity
+          }
+          const res = await fetch(`https://cosmetics-backend-pz3r.onrender.com/cart/addToCart`,{
+            method : "POST",
+            headers :{
+              "Content-Type" : "application/json",
+              "Authorization" : `Bearer ${localStorage.getItem("token")}`
+            },
+            body : JSON.stringify(cartdata)
+          })
+          if(!res.ok){
+            throw new Error("Failed to fetch cart")
+          }
+          const data = await res.json()
+          alert("product added to cart")
+          console.log(data)
+          
+        }catch(error){
+          console.log(error)
+        }
       })
 
     }
